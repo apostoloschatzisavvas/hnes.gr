@@ -1,0 +1,101 @@
+# Sveltia CMS: the Board writes Knowledge Center articles at https://hnes.gr/admin/
+# Sign-in is with GitHub, through the site's Netlify OAuth provider (no server of our own).
+backend:
+  name: github
+  repo: apostoloschatzisavvas/hnes.gr
+  branch: main
+
+# Every article becomes a pull request; nothing is published until the owner approves it.
+publish_mode: editorial_workflow
+
+site_url: https://hnes.gr
+display_url: https://hnes.gr
+logo_url: /favicon.svg
+
+media_folder: /content/media
+public_folder: /media
+media_libraries:
+  all:
+    transformations:
+      raster_image:
+        format: webp
+        quality: 85
+        width: 2048
+        height: 2048
+
+i18n:
+  structure: multiple_files
+  locales: [el, en]
+  default_locale: el
+  initial_locales: [el]
+
+collections:
+  - name: articles
+    label: Άρθρα
+    label_singular: Άρθρο
+    description: Τα άρθρα του Κέντρου Γνώσης. Γράψτε στα ελληνικά, και προαιρετικά προσθέστε αγγλική εκδοχή από το κουμπί γλώσσας πάνω δεξιά.
+    folder: /content/articles
+    extension: md
+    format: frontmatter
+    create: true
+    delete: true
+    slug: "{{fields.slug}}"
+    identifier_field: title
+    summary: "{{title}} · {{date}}"
+    sortable_fields: [date, title]
+    fields:
+      - name: title
+        label: Τίτλος
+        widget: string
+        i18n: true
+      - name: slug
+        label: Διεύθυνση σελίδας (λατινικά)
+        widget: string
+        i18n: duplicate
+        pattern: ['^[a-z0-9]+(-[a-z0-9]+)*$', 'Μόνο μικρά λατινικά γράμματα, αριθμοί και παύλες']
+        hint: π.χ. pyrinikh-energeia-sthn-ellada. Μην την αλλάζετε μετά τη δημοσίευση, γιατί αλλάζει ο σύνδεσμος του άρθρου.
+      - name: date
+        label: Ημερομηνία δημοσίευσης
+        widget: datetime
+        type: date
+        default: '{{now}}'
+        i18n: duplicate
+      - name: updated
+        label: Τελευταία ενημέρωση
+        widget: datetime
+        type: date
+        required: false
+        i18n: duplicate
+      - name: author
+        label: Συγγραφέας
+        widget: string
+        required: false
+        i18n: duplicate
+      - name: summary
+        label: Περίληψη
+        widget: text
+        i18n: true
+        hint: Μία ή δύο προτάσεις. Εμφανίζεται στη λίστα του Κέντρου Γνώσης και στα αποτελέσματα αναζήτησης.
+      - name: image
+        label: Εικόνα κεφαλίδας (προαιρετική)
+        widget: image
+        required: false
+        i18n: duplicate
+        hint: Οριζόντια φωτογραφία. Χωρίς εικόνα μπαίνει το μπλε πλαίσιο με το σήμα της ΕΚΠΕ.
+      - name: pdf
+        label: Αρχείο PDF (προαιρετικό)
+        widget: file
+        required: false
+        accept: application/pdf,.pdf
+        i18n: duplicate
+        hint: Εμφανίζεται ως κουμπί «Λήψη PDF» κάτω από τον τίτλο.
+      - name: draft
+        label: Πρόχειρο (δεν εμφανίζεται στο site)
+        widget: boolean
+        default: false
+        required: false
+        i18n: duplicate
+      - name: body
+        label: Κείμενο
+        widget: richtext
+        i18n: true
