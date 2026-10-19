@@ -3,6 +3,7 @@
   "lang": {
     "el": {
       "hub": "/el/hnes-knowledge-center/",
+      "home": "/el/",
       "meta_item": "<div><dt>@@LABEL@@</dt><dd>@@VALUE@@</dd></div>",
       "meta_wrap": "<dl class=\"art__meta\">@@ITEMS@@</dl>",
       "posted": "Δημοσίευση",
@@ -16,6 +17,7 @@
     },
     "en": {
       "hub": "/hnes-knowledge-center/",
+      "home": "/",
       "meta_item": "<div><dt>@@LABEL@@</dt><dd>@@VALUE@@</dd></div>",
       "meta_wrap": "<dl class=\"art__meta\">@@ITEMS@@</dl>",
       "posted": "Posted",

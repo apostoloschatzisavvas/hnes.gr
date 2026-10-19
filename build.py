@@ -106,12 +106,12 @@ def article_page(a, arts):
                  "@@SLUG@@": a["slug"], "@@META@@": meta, "@@BANNER@@": banner, "@@BODY@@": md_to_html(a["body"])})
 
 
-def hub_cards(lang, arts):
+def hub_cards(lang, arts, n=None):
     # Articles in this language first; an article that exists only in the other language is listed too.
     L = S["lang"][lang]
     mine = [a for a in arts if a["lang"] == lang] + [a for a in arts if a["lang"] != lang and not twin(a, arts)]
     cards = ""
-    for a in sorted(mine, key=lambda a: str(a["fm"].get("date", "")), reverse=True):
+    for a in sorted(mine, key=lambda a: str(a["fm"].get("date", "")), reverse=True)[:n]:
         fm = a["fm"]
         by = L["card_by"].replace("@@AUTHOR@@", esc(fm["author"])) if fm.get("author") else ""
         cards += (L["card"].replace("@@HREF@@", path(a["slug"], a["lang"]))
@@ -149,6 +149,18 @@ def main():
         end = page.index("</ul>", start)
         page = page[:end] + hub_cards(lang, arts) + page[end:]
         open(hub, "w", encoding="utf-8").write(page)
+
+    # the home page shows the three newest; its section ships hidden until there is one
+    for lang in LANGS:
+        home = os.path.join(OUT, S["lang"][lang]["home"].strip("/"), "index.html")
+        page = open(home, encoding="utf-8").read()
+        cards = hub_cards(lang, arts, 3)
+        if cards and '<ul class="kgrid" id="latest">' in page:
+            start = page.index('<ul class="kgrid" id="latest">') + len('<ul class="kgrid" id="latest">')
+            end = page.index("</ul>", start)
+            page = page[:start] + cards + page[end:]
+            page = page.replace('id="nea" aria-labelledby="lH" hidden>', 'id="nea" aria-labelledby="lH">', 1)
+            open(home, "w", encoding="utf-8").write(page)
 
     # sitemap and llms.txt learn about every article
     urls, lines, seen = [], [], set()
