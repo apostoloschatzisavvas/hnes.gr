@@ -37,6 +37,7 @@ collections:
     folder: /content/articles
     extension: md
     format: frontmatter
+    i18n: true
     create: true
     delete: true
     slug: "{{fields.slug}}"
