@@ -11,6 +11,7 @@
 - [Αίτηση μέλους / Membership application](https://hnes.gr/membership/apply/) · [https://hnes.gr/el/membership/apply/](https://hnes.gr/el/membership/apply/): ηλεκτρονική αίτηση φοιτητικού ή επαγγελματικού μέλους
 - [Αίτηση οργανισμού / Organization application](https://hnes.gr/membership/apply-organization/) · [https://hnes.gr/el/membership/apply-organization/](https://hnes.gr/el/membership/apply-organization/)
 - [HNES Knowledge Center / Κέντρο Γνώσης](https://hnes.gr/hnes-knowledge-center/): άρθρα και θέσεις της ΕΚΠΕ
+- [Επικοινωνία / Contact](https://hnes.gr/el/epikoinonia/) · [https://hnes.gr/contact/](https://hnes.gr/contact/): φόρμα επικοινωνίας, ή email στο contact@hnes.gr
 - [Καταστατικό / Articles of Association](https://hnes.gr/el/hnes-knowledge-center/katastatiko/): το καταστατικό του σωματείου (στα ελληνικά), και σε PDF: https://hnes.gr/assets/ekpe-katastatiko.pdf
 
 ## Μέλη / Membership
