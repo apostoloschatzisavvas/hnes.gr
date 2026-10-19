@@ -5,7 +5,7 @@ backend:
   repo: apostoloschatzisavvas/hnes.gr
   branch: main
 
-# Every article becomes a pull request; nothing is published until the owner approves it.
+# Every article is kept as a draft pull request until its author presses Publish.
 publish_mode: editorial_workflow
 
 site_url: https://hnes.gr
