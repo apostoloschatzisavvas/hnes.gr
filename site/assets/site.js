@@ -193,4 +193,15 @@
     boxes[0].addEventListener("invalid", function () { err.hidden = false; });
     sync();
   });
+  [].forEach.call(document.querySelectorAll("textarea[data-words]"), function (ta) {
+    var cap = +ta.dataset.words, out = document.getElementById("h-" + ta.name), unit = out.textContent.replace(/^[^a-zα-ω]+/i, "");
+    out.setAttribute("aria-live", "polite");
+    var count = function () {
+      var n = (ta.value.trim().match(/\S+/g) || []).length;
+      out.textContent = n + " / " + cap + " " + unit;
+      out.classList.toggle("is-over", n > cap);
+      ta.setCustomValidity(n > cap ? ta.dataset.werr : "");
+    };
+    ta.addEventListener("input", count); count();
+  });
 })();

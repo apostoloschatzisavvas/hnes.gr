@@ -493,3 +493,5 @@ body.drawer-open{overflow:hidden}
 @media (max-width:640px){.fpick__opts{grid-template-columns:minmax(0,1fr)}}
 .fs__link{margin:0 0 14px}
 .fs__link a{color:var(--blue);font-weight:500}
+.bd__sum{margin:10px 0 0;color:var(--ink-2);line-height:1.6}
+.fd__hint.is-over{color:#b3261e;font-weight:500}
