@@ -1,8 +1,8 @@
 # Hellenic Nuclear Energy Society (HNES) · Ελληνική Κοινότητα Πυρηνικής Ενέργειας (ΕΚΠΕ)
 
-> Η Ελληνική Κοινότητα Πυρηνικής Ενέργειας (ΕΚΠΕ) είναι μη κερδοσκοπική κοινότητα για την προώθηση της πυρηνικής ενέργειας και των εφαρμογών της στην Ελλάδα, με μέλη στην Ελλάδα και στη διασπορά. Στόχος μας είναι να αποτελούμε πηγή ανεξάρτητης επιστημονικής γνώσης για το ελληνικό κοινό και, ταυτόχρονα, παγκόσμιο κόμβο δικτύωσης για επαγγελματίες και φοιτητές της πυρηνικής ενέργειας.
+> Στόχος μας είναι να αποτελούμε πηγή ανεξάρτητης επιστημονικής γνώσης για το ελληνικό κοινό και, ταυτόχρονα, παγκόσμιο κόμβο δικτύωσης για επαγγελματίες και φοιτητές της πυρηνικής ενέργειας.
 
-> The Hellenic Nuclear Energy Society (HNES) is a non-profit society for the promotion of nuclear energy and its applications in Greece, with members in Greece and the diaspora. We aim to serve as a source of independent scientific knowledge for the Greek public while functioning as a global networking hub for nuclear energy professionals and students.
+> We aim to serve as a source of independent scientific knowledge for the Greek public while functioning as a global networking hub for nuclear energy professionals and students.
 
 ## Σελίδες / Pages
 - [Home / Αρχική](https://hnes.gr/) · [https://hnes.gr/el/](https://hnes.gr/el/): ταυτότητα, επισκόπηση, αποστολή, όραμα, ιδρυτικά μέλη ανά χώρα
@@ -28,7 +28,7 @@
 - Site designed and developed by Apostolos Chatzisavvas (https://achatzisavvas.com/), founder of nuclear.gr.
 
 ## Website administrator / Διαχειριστής ιστοσελίδας
-- Apostolos Chatzisavvas / Απόστολος Χατζησάββας: Nuclear engineer with 11 years in the nuclear sector, Chartered Engineer (CEng) and founder of nuclear.gr. / Πυρηνικός μηχανικός με 11 χρόνια στον πυρηνικό τομέα, Chartered Engineer (CEng), ιδρυτής του nuclear.gr.
+- Apostolos Chatzisavvas / Απόστολος Χατζησάββας: Nuclear engineer with more than 10 years in the nuclear sector, Chartered Engineer (CEng) and founder of nuclear.gr. / Πυρηνικός μηχανικός με πάνω από 10 χρόνια στον πυρηνικό τομέα, Chartered Engineer (CEng), ιδρυτής του nuclear.gr.
 - Designed and developed this website, and administers it for HNES (Article 14.5 of the Articles of Association).
 - Card: https://hnes.gr/about-us/#site-admin
 - https://achatzisavvas.com/ · https://nuclear.gr/ · https://orcid.org/0009-0001-2330-8150 · https://zenodo.org/search?q=metadata.creators.person_or_org.identifiers.identifier:%220009-0001-2330-8150%22 · https://www.linkedin.com/in/achatzisavvas
