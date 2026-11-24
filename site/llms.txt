@@ -25,3 +25,4 @@
 
 ## Πηγή / Source
 - https://hnes.gr/
+- Site designed and developed by Apostolos Chatzisavvas (https://achatzisavvas.com/), founder of nuclear.gr.

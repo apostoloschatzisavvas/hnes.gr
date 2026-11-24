@@ -167,4 +167,30 @@
     var chk = function () { if (intro.getBoundingClientRect().top < innerHeight * .9) { intro.classList.add("is-in"); removeEventListener("scroll", chk); } };
     addEventListener("scroll", chk, { passive: true }); chk();
   }
+  
+  [].forEach.call(document.querySelectorAll("input[data-match]"), function (two) {
+    var one = document.getElementById(two.dataset.match), err = document.getElementById("e-" + two.name);
+    var check = function (show) {
+      var bad = two.value !== "" && one.value.trim().toLowerCase() !== two.value.trim().toLowerCase();
+      two.setCustomValidity(bad ? err.textContent : "");
+      if (show || !bad) err.hidden = !bad;
+      two.setAttribute("aria-invalid", bad ? "true" : "false");
+    };
+    two.addEventListener("input", function () { check(false); });
+    two.addEventListener("blur", function () { check(true); });
+    one.addEventListener("input", function () { check(false); });
+    two.addEventListener("invalid", function () { if (two.value) err.hidden = false; });
+  });
+  [].forEach.call(document.querySelectorAll(".fpick"), function (fs) {
+    var max = +fs.dataset.max || 3, boxes = [].slice.call(fs.querySelectorAll("input[type=checkbox]")), err = fs.querySelector(".fd__err");
+    var sync = function () {
+      var n = boxes.filter(function (b) { return b.checked; }).length;
+      boxes.forEach(function (b) { b.disabled = !b.checked && n >= max; });
+      boxes[0].setCustomValidity(n ? "" : err.textContent);
+      if (n) err.hidden = true;
+    };
+    boxes.forEach(function (b) { b.addEventListener("change", sync); });
+    boxes[0].addEventListener("invalid", function () { err.hidden = false; });
+    sync();
+  });
 })();
